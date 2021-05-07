@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+    <title>WBK的个人主页</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <div class="navbar">
+        <!-- sidebar -->
+        <div class="sidebar">
+            <div class="menu-icon" onclick="onMenuClick()">
+                <div class="line line-1"></div>
+                <div class="line line-2"></div>
+                <div class="line line-3"></div>
+            </div>
+            <ul class="social-icons-list">
+                <li>
+                    <a href="#" class="social-link">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="social-link">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="social-link">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="social-link">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+            <div class="year">
+                2021
+            </div>
+        </div>
+        <!-- end of sidebar -->
+
+        <!-- navigation -->
+        <nav class="navigation">
+            <div class="navigation-header">
+                <h1 class="navigation-heading">WBK的个人主页</h1>
+                <form class="navigation-search">
+                    <input type="text" class="navigation-search-input" placeholder="查询...">
+                    <button class="navigation-search-btn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            <ul class="navigation-list">
+                <li class="navigation-item">
+                    <a href="#" class="navigation-link">home</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#" class="navigation-link">home</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#" class="navigation-link">home</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#" class="navigation-link">home</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#" class="navigation-link">home</a>
+                </li>
+            </ul>
+
+            <div class="copyright">
+                <p>&copy; 2021. WBK's Pofile. All Rights Resvered.</p>
+            </div>
+        </nav>
+        <!-- end of navigation -->
+    </div>
+    <!-- end of navbar -->
+    <!-- header -->
+    <div class="header">
+        <div class="brand">
+            <div>
+                <img src="https://picsum.photos/id/684/600/400" width="80">
+            </div>
+            <h3 class="profile-heading">
+                WBK的个人主页
+            </h3>
+        </div>
+        <div class="banner">
+            <h1 class="banner-heading">欢迎来到WBK的个人主页</h1>
+            <p class="banner-paragraph">Talk is cheap, Show me the code!</p>
+            <button class="banner-button">Check Out</button>
+        </div>
+    </div>
+    <!-- end of header -->
+
+    <script>
+        function changeMenuIcon(isShowing) {
+            const firstLine = document.getElementsByClassName("line-1")[0];
+            const secondLine = document.getElementsByClassName("line-2")[0];
+            const thirdLine = document.getElementsByClassName("line-3")[0];
+            if (isShowing == null || isShowing === "false") {
+                firstLine.style.transform = "rotate(-405deg) translate(-5px, 6px)";
+                secondLine.style.opacity = "0";
+                thirdLine.style.transform = "rotate(405deg) translate(-5px, -6px)";
+                firstLine.style.width = "2.5rem";
+                thirdLine.style.width = "2.5rem";
+            } else {
+                firstLine.style.transform = "";
+                secondLine.style.opacity = "1";
+                thirdLine.style.transform = "";
+                firstLine.style.width = "1.8rem";
+                thirdLine.style.width = "1.8rem";
+            }
+        }
+
+        function onMenuClick() {
+            const navigation = document.getElementsByClassName("navigation")[0];
+            let isShowing = navigation.getAttribute("is-showing");
+            if (isShowing === null || isShowing === "false") {
+                //第一次点击，菜单在隐藏状态 或 点击之前，菜单在隐藏状态
+                navigation.style.left = "8rem";
+                changeMenuIcon(isShowing);
+                navigation.setAttribute("is-showing", true);
+            } else {
+                // 点击之前，菜单在隐藏状态
+                navigation.style.left = "-32rem"
+                changeMenuIcon(isShowing);
+                navigation.setAttribute("is-showing", false);
+            }
+        }
+    </script>
+</body>
+
+</html>

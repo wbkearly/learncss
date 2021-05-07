@@ -1,2 +1,3 @@
 # learncss
-学习CSS
+
+通过index.html和style.css来学习css
